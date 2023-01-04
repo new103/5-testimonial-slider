@@ -28,7 +28,18 @@ let idx = 0;
 
 function updateTestimonial() {
   const { name, photoURL, text } = testimonials[idx];
-  console.log(name);
+
+  imgEl.src = photoURL;
+  textEl.textContent = text;
+  nameEl.textContent = name;
+
+  idx++;
+
+  if (idx === testimonials.length) {
+    idx = 0;
+  }
+
+  setTimeout(updateTestimonial, 5000);
 }
 
 updateTestimonial();
